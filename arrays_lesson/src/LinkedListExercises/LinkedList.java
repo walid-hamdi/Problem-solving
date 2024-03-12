@@ -135,22 +135,22 @@ public class LinkedList {
     }
 
     public int getKthFromTheEnd(int k) {
-        var distance = k - 1; // 2
-        var current = first;
-        var index = 0;
-        while (current != null) {
-            var start = current;
-            var end = current;
-            current = current.next;
-            while (index != distance) {
-                index++; // 1 - 2
-                current = current.next;
-            }
-            end = current;
+        if (isEmpty())
+            return -1;
+
+        var start = first;
+        var end = first;
+        for (var i = 0; i < k - 1; i++) {
+            end = end.next;
             if (end.next == null)
-                return start.value;
+                return -1;
         }
-        return -1;
+        while (end != last) {
+            start = start.next;
+            end = end.next;
+        }
+
+        return start.value;
     }
 
     private boolean isEmpty() {
