@@ -1,7 +1,9 @@
-import java.lang.reflect.Array;
+import java.util.*;
 
-import ArraysExercices.Arrays;
-import LinkedListExercises.LinkedList;
+import StackExercises.CustomStack;
+
+// import ArraysExercises.Arrays;
+// import LinkedListExercises.LinkedList;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -28,10 +30,12 @@ public class App {
         // System.out.println(java.util.Arrays.toString(array));
 
         // stack
-        var StringReverser = new StackExercises.StringReverser();
-        var reversed = StringReverser.reverse("abcd");
-        System.out.println(reversed);
+        CustomStack customStack = new CustomStack();
+        // var reversed = customStack.reverse("abcd");
+        // System.out.println(reversed);
 
+        Boolean isBalanced = customStack.balancedExpression("[()]");
+        System.out.println(isBalanced);
     }
 
 }
