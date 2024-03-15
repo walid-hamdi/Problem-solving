@@ -34,7 +34,7 @@ public class App {
         // var reversed = customStack.reverse("abcd");
         // System.out.println(reversed);
 
-        Boolean isBalanced = customStack.balancedExpression("[(a)<>]");
+        Boolean isBalanced = customStack.balancedExpression("()");
         System.out.println(isBalanced);
     }
 

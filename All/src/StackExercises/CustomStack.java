@@ -22,23 +22,33 @@ public class CustomStack {
     public boolean balancedExpression(String str) {
         Stack<Character> stack = new Stack<Character>();
         for (Character character : str.toCharArray()) {
-            if (character == '(' || character == '[' || character == '<') {
+            if (leftBrackets(character)) {
                 stack.push(character);
             }
-            if (character == ')')
-                if (stack.pop() != '(')
+
+            if (rightBrackets(character)) {
+                if (stack.empty())
                     return false;
 
-            if (character == ']')
-                if (stack.pop() != '[')
+                if (bracketsMatch(stack.pop(), character))
                     return false;
-
-            if (character == '>')
-                if (stack.pop() != '<')
-                    return false;
+            }
         }
 
-        return true;
+        return stack.empty();
+    }
+
+    private boolean bracketsMatch(Character left, Character right) {
+        return (right == ')' && left != '(') || (right == '[' && left != ']') || (right == '<' && left != '>')
+                || (right == '{' && left != '}');
+    }
+
+    private boolean leftBrackets(Character character) {
+        return character == '(' || character == '[' || character == '<' || character == '{';
+    }
+
+    private boolean rightBrackets(Character character) {
+        return character == ')' || character == ']' || character == '>' || character == '}';
     }
 
 }
