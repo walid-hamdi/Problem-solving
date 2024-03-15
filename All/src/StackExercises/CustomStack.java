@@ -20,19 +20,25 @@ public class CustomStack {
     }
 
     public boolean balancedExpression(String str) {
-
         Stack<Character> stack = new Stack<Character>();
-
         for (Character character : str.toCharArray()) {
-            if (character == '(' || character == '[')
+            if (character == '(' || character == '[' || character == '<') {
                 stack.push(character);
-
-            if (character == ')' || character == ']') {
-                if (stack.pop() != stack.peek())
-                    return false;
             }
+            if (character == ')')
+                if (stack.pop() != '(')
+                    return false;
+
+            if (character == ']')
+                if (stack.pop() != '[')
+                    return false;
+
+            if (character == '>')
+                if (stack.pop() != '<')
+                    return false;
         }
 
         return true;
     }
+
 }
