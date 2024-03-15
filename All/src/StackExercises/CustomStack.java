@@ -4,6 +4,8 @@ import java.util.*;
 import java.lang.StringBuffer;
 
 public class CustomStack {
+    private final List<Character> rightBrackets = Arrays.asList('(', '[', '<', '{');
+    private final List<Character> leftBrackets = Arrays.asList(')', ']', '>', '}');
 
     public String reverse(String input) {
         Stack<Character> stack = new Stack<Character>();
@@ -22,15 +24,15 @@ public class CustomStack {
     public boolean balancedExpression(String str) {
         Stack<Character> stack = new Stack<Character>();
         for (Character character : str.toCharArray()) {
-            if (leftBrackets(character)) {
+            if (isLeftBrackets(character)) {
                 stack.push(character);
             }
 
-            if (rightBrackets(character)) {
+            if (idRightBrackets(character)) {
                 if (stack.empty())
                     return false;
 
-                if (bracketsMatch(stack.pop(), character))
+                if (!bracketsMatch(stack.pop(), character))
                     return false;
             }
         }
@@ -39,16 +41,15 @@ public class CustomStack {
     }
 
     private boolean bracketsMatch(Character left, Character right) {
-        return (right == ')' && left != '(') || (right == '[' && left != ']') || (right == '<' && left != '>')
-                || (right == '{' && left != '}');
+        return leftBrackets.indexOf(left) == rightBrackets.indexOf(right);
     }
 
-    private boolean leftBrackets(Character character) {
-        return character == '(' || character == '[' || character == '<' || character == '{';
+    private boolean isLeftBrackets(Character character) {
+        return rightBrackets.contains(character);
     }
 
-    private boolean rightBrackets(Character character) {
-        return character == ')' || character == ']' || character == '>' || character == '}';
+    private boolean idRightBrackets(Character character) {
+        return leftBrackets.contains(character);
     }
 
 }
