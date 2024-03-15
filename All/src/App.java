@@ -1,6 +1,6 @@
 import java.util.*;
 
-import StackExercises.CustomStack;
+import StackExercises.BalancedExpress;
 
 // import ArraysExercises.Arrays;
 // import LinkedListExercises.LinkedList;
@@ -30,7 +30,7 @@ public class App {
         // System.out.println(java.util.Arrays.toString(array));
 
         // stack
-        CustomStack customStack = new CustomStack();
+        BalancedExpress customStack = new BalancedExpress();
         // var reversed = customStack.reverse("abcd");
         // System.out.println(reversed);
 

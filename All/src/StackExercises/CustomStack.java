@@ -1,55 +1,33 @@
 package StackExercises;
 
-import java.util.*;
-import java.lang.StringBuffer;
-
 public class CustomStack {
-    private final List<Character> leftBrackets = Arrays.asList('(', '[', '<', '{');
-    private final List<Character> rightBrackets = Arrays.asList(')', ']', '>', '}');
+    // stack
+    // push
+    // pop
+    // peek
+    // isEmpty
+    int[] arr;
+    int size;
 
-    public String reverse(String input) {
-        Stack<Character> stack = new Stack<Character>();
-        for (Character character : input.toCharArray()) {
-            stack.push(character);
-        }
-
-        StringBuffer reversed = new StringBuffer();
-        while (!stack.isEmpty()) {
-            reversed.append(stack.pop());
-        }
-
-        return reversed.toString();
+    CustomStack() {
+        size = 1;
+        arr = new int[size];
     }
 
-    public boolean balancedExpression(String str) {
-        Stack<Character> stack = new Stack<Character>();
-        for (Character character : str.toCharArray()) {
-            if (isLeftBrackets(character)) {
-                stack.push(character);
-            }
+    public void push(int value) {
 
-            if (idRightBrackets(character)) {
-                if (stack.empty())
-                    return false;
-
-                if (!bracketsMatch(stack.pop(), character))
-                    return false;
-            }
-        }
-
-        return stack.empty();
+        arr[size++] = value;
     }
 
-    private boolean bracketsMatch(Character left, Character right) {
-        return leftBrackets.indexOf(left) == rightBrackets.indexOf(right);
+    public int pop() {
+        return 0;
     }
 
-    private boolean isLeftBrackets(Character character) {
-        return leftBrackets.contains(character);
+    public int peek() {
+        return 1;
     }
 
-    private boolean idRightBrackets(Character character) {
-        return rightBrackets.contains(character);
+    public boolean isEmpty() {
+        return false;
     }
-
 }
