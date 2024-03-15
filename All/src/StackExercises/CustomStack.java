@@ -4,8 +4,8 @@ import java.util.*;
 import java.lang.StringBuffer;
 
 public class CustomStack {
-    private final List<Character> rightBrackets = Arrays.asList('(', '[', '<', '{');
-    private final List<Character> leftBrackets = Arrays.asList(')', ']', '>', '}');
+    private final List<Character> leftBrackets = Arrays.asList('(', '[', '<', '{');
+    private final List<Character> rightBrackets = Arrays.asList(')', ']', '>', '}');
 
     public String reverse(String input) {
         Stack<Character> stack = new Stack<Character>();
@@ -45,11 +45,11 @@ public class CustomStack {
     }
 
     private boolean isLeftBrackets(Character character) {
-        return rightBrackets.contains(character);
+        return leftBrackets.contains(character);
     }
 
     private boolean idRightBrackets(Character character) {
-        return leftBrackets.contains(character);
+        return rightBrackets.contains(character);
     }
 
 }
