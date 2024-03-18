@@ -20,7 +20,7 @@ public class CustomStack {
         return arr[--count];
     }
 
-    public int peak() {
+    public int peek() {
         if (count == 0)
             throw new IllegalStateException();
 

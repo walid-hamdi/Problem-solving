@@ -46,7 +46,7 @@ public class App {
         customStack.push(30);
         System.out.println(customStack.pop());
         System.out.println(customStack.pop());
-        System.out.println("Peek is : " + customStack.peak());
+        System.out.println("Peek is : " + customStack.peek());
         System.out.println("Does the array empty :" + customStack.isEmpty());
         System.out.println(customStack);
     }
