@@ -1,33 +1,39 @@
 package StackExercises;
 
-public class CustomStack {
-    // stack
-    // push
-    // pop
-    // peek
-    // isEmpty
-    int[] arr;
-    int size;
+import ArraysExercises.Arrays;
 
-    CustomStack() {
-        size = 1;
-        arr = new int[size];
-    }
+public class CustomStack {
+    private int[] arr = new int[5];
+    private int count = 0;
 
     public void push(int value) {
+        if (arr.length == count)
+            throw new StackOverflowError();
 
-        arr[size++] = value;
+        arr[count++] = value;
     }
 
     public int pop() {
-        return 0;
+        if (count == 0)
+            throw new IllegalStateException();
+
+        return arr[--count];
     }
 
-    public int peek() {
-        return 1;
+    public int peak() {
+        if (count == 0)
+            throw new IllegalStateException();
+
+        return arr[count - 1];
     }
 
     public boolean isEmpty() {
-        return false;
+        return count == 0;
+    }
+
+    @Override
+    public String toString() {
+        var content = java.util.Arrays.copyOfRange(arr, 0, count);
+        return java.util.Arrays.toString(content);
     }
 }

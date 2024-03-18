@@ -1,6 +1,8 @@
 import java.util.*;
 
 import StackExercises.BalancedExpress;
+import StackExercises.CustomStack;
+import StackExercises.ReverseString;
 
 // import ArraysExercises.Arrays;
 // import LinkedListExercises.LinkedList;
@@ -30,12 +32,23 @@ public class App {
         // System.out.println(java.util.Arrays.toString(array));
 
         // stack
-        BalancedExpress customStack = new BalancedExpress();
-        // var reversed = customStack.reverse("abcd");
+        // ReverseString reverseString = new ReverseString();
+        // var reversed = reverseString.reverse("abcd");
         // System.out.println(reversed);
 
-        Boolean isBalanced = customStack.balancedExpression("([]");
-        System.out.println(isBalanced);
+        // BalancedExpress obj = new BalancedExpress();
+        // Boolean isBalanced = obj.balancedExpression("([]");
+        // System.out.println(isBalanced);
+
+        CustomStack customStack = new CustomStack();
+        customStack.push(10);
+        customStack.push(20);
+        customStack.push(30);
+        System.out.println(customStack.pop());
+        System.out.println(customStack.pop());
+        System.out.println("Peek is : " + customStack.peak());
+        System.out.println("Does the array empty :" + customStack.isEmpty());
+        System.out.println(customStack);
     }
 
 }

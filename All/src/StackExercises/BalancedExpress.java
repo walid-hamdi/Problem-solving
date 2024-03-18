@@ -1,25 +1,10 @@
 package StackExercises;
 
 import java.util.*;
-import java.lang.StringBuffer;
 
 public class BalancedExpress {
     private final List<Character> leftBrackets = Arrays.asList('(', '[', '<', '{');
     private final List<Character> rightBrackets = Arrays.asList(')', ']', '>', '}');
-
-    public String reverse(String input) {
-        Stack<Character> stack = new Stack<Character>();
-        for (Character character : input.toCharArray()) {
-            stack.push(character);
-        }
-
-        StringBuffer reversed = new StringBuffer();
-        while (!stack.isEmpty()) {
-            reversed.append(stack.pop());
-        }
-
-        return reversed.toString();
-    }
 
     public boolean balancedExpression(String str) {
         Stack<Character> stack = new Stack<Character>();
@@ -53,4 +38,3 @@ public class BalancedExpress {
     }
 
 }
-
