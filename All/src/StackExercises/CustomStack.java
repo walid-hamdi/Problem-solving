@@ -1,7 +1,5 @@
 package StackExercises;
 
-import ArraysExercises.Arrays;
-
 public class CustomStack {
     private int[] arr = new int[5];
     private int count = 0;

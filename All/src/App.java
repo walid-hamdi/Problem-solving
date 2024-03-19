@@ -1,6 +1,7 @@
 import java.util.*;
 
 import LinkedListExercises.LinkedList;
+import QueueExercises.ArrayQueue;
 import QueueExercises.ReverseQueue;
 import StackExercises.BalancedExpress;
 import StackExercises.CustomStack;
@@ -53,12 +54,23 @@ public class App {
         // System.out.println(customStack);
 
         // Queue
-        Queue<Integer> queue = new ArrayDeque<>();
-        queue.add(10);
-        queue.add(20);
-        queue.add(30);
-        ReverseQueue.reverse(queue);
-        System.out.println(queue);
+        // Queue<Integer> queue = new ArrayDeque<>();
+        // queue.add(10);
+        // queue.add(20);
+        // queue.add(30);
+        // ReverseQueue.reverse(queue);
+        // System.out.println(queue);
+
+        ArrayQueue arrayQueue = new ArrayQueue();
+        arrayQueue.enqueue(10);
+        arrayQueue.enqueue(20);
+        arrayQueue.enqueue(30);
+        arrayQueue.enqueue(40);
+        arrayQueue.enqueue(50);
+        arrayQueue.dequeue();
+        // var peek = arrayQueue.peek();
+        // System.out.println(peek);
+        System.out.println(arrayQueue.toString());
     }
 
 }
