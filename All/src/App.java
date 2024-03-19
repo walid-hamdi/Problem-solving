@@ -1,5 +1,7 @@
 import java.util.*;
 
+import LinkedListExercises.LinkedList;
+import QueueExercises.ReverseQueue;
 import StackExercises.BalancedExpress;
 import StackExercises.CustomStack;
 import StackExercises.ReverseString;
@@ -40,15 +42,23 @@ public class App {
         // Boolean isBalanced = obj.balancedExpression("([]");
         // System.out.println(isBalanced);
 
-        CustomStack customStack = new CustomStack();
-        customStack.push(10);
-        customStack.push(20);
-        customStack.push(30);
-        System.out.println(customStack.pop());
-        System.out.println(customStack.pop());
-        System.out.println("Peek is : " + customStack.peek());
-        System.out.println("Does the array empty :" + customStack.isEmpty());
-        System.out.println(customStack);
+        // CustomStack customStack = new CustomStack();
+        // customStack.push(10);
+        // customStack.push(20);
+        // customStack.push(30);
+        // System.out.println(customStack.pop());
+        // System.out.println(customStack.pop());
+        // System.out.println("Peek is : " + customStack.peek());
+        // System.out.println("Does the array empty :" + customStack.isEmpty());
+        // System.out.println(customStack);
+
+        // Queue
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        ReverseQueue.reverse(queue);
+        System.out.println(queue);
     }
 
 }
