@@ -61,16 +61,22 @@ public class App {
         // ReverseQueue.reverse(queue);
         // System.out.println(queue);
 
-        ArrayQueue arrayQueue = new ArrayQueue();
+        ArrayQueue arrayQueue = new ArrayQueue(5);
         arrayQueue.enqueue(10);
         arrayQueue.enqueue(20);
         arrayQueue.enqueue(30);
         arrayQueue.enqueue(40);
         arrayQueue.enqueue(50);
         arrayQueue.dequeue();
+        arrayQueue.dequeue();
+        arrayQueue.enqueue(60);
+        arrayQueue.enqueue(70);
+        arrayQueue.dequeue();
+        arrayQueue.dequeue();
+        arrayQueue.enqueue(80);
         // var peek = arrayQueue.peek();
         // System.out.println(peek);
-        System.out.println(arrayQueue.toString());
+        System.out.println(arrayQueue);
     }
 
 }
