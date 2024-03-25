@@ -3,6 +3,7 @@ import java.util.*;
 import LinkedListExercises.LinkedList;
 import QueueExercises.ArrayQueue;
 import QueueExercises.ReverseQueue;
+import QueueExercises.QueueWith2Stacks;
 import StackExercises.BalancedExpress;
 import StackExercises.CustomStack;
 import StackExercises.ReverseString;
@@ -61,22 +62,32 @@ public class App {
         // ReverseQueue.reverse(queue);
         // System.out.println(queue);
 
-        ArrayQueue arrayQueue = new ArrayQueue(5);
-        arrayQueue.enqueue(10);
-        arrayQueue.enqueue(20);
-        arrayQueue.enqueue(30);
-        arrayQueue.enqueue(40);
-        arrayQueue.enqueue(50);
-        arrayQueue.dequeue();
-        arrayQueue.dequeue();
-        arrayQueue.enqueue(60);
-        arrayQueue.enqueue(70);
-        arrayQueue.dequeue();
-        arrayQueue.dequeue();
-        arrayQueue.enqueue(80);
-        // var peek = arrayQueue.peek();
-        // System.out.println(peek);
-        System.out.println(arrayQueue);
+        // ArrayQueue arrayQueue = new ArrayQueue(5);
+        // arrayQueue.enqueue(10);
+        // arrayQueue.enqueue(20);
+        // arrayQueue.enqueue(30);
+        // arrayQueue.enqueue(40);
+        // arrayQueue.enqueue(50);
+        // arrayQueue.dequeue();
+        // arrayQueue.dequeue();
+        // arrayQueue.enqueue(60);
+        // arrayQueue.enqueue(70);
+        // arrayQueue.dequeue();
+        // arrayQueue.dequeue();
+        // arrayQueue.enqueue(80);
+        // // var peek = arrayQueue.peek();
+        // // System.out.println(peek);
+        // System.out.println(arrayQueue);
+
+        QueueWith2Stacks stackQueue = new QueueWith2Stacks();
+        stackQueue.enqueue(10);
+        stackQueue.enqueue(20);
+        stackQueue.enqueue(30);
+        var item1 = stackQueue.dequeue();
+        var item2 = stackQueue.dequeue();
+        var item3 = stackQueue.dequeue();
+        var item4 = stackQueue.dequeue();
+        System.out.println(item3);
     }
 
 }
