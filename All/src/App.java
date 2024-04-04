@@ -1,4 +1,6 @@
 
+import java.util.Map;
+import java.util.HashMap;
 // import LinkedListExercises.LinkedList;
 // import QueueExercises.ArrayQueue;
 import QueueExercises.PriorityQueue;
@@ -89,14 +91,44 @@ public class App {
         // var item4 = stackQueue.dequeue();
         // System.out.println(item3);
 
-        PriorityQueue priorityQueue = new PriorityQueue(5);
-        priorityQueue.insert(1);
-        priorityQueue.insert(2);
-        priorityQueue.insert(4);
-        priorityQueue.insert(7);
-        priorityQueue.insert(3);
-        while (!priorityQueue.isEmpty())
-            System.out.println(priorityQueue.remove());
+        // PriorityQueue priorityQueue = new PriorityQueue(5);
+        // priorityQueue.insert(1);
+        // priorityQueue.insert(2);
+        // priorityQueue.insert(4);
+        // priorityQueue.insert(7);
+        // priorityQueue.insert(3);
+        // while (!priorityQueue.isEmpty())
+        // System.out.println(priorityQueue.remove());
+
+        // Working with Hashtable
+        // Map<Integer, String> map = new HashMap<>();
+        // map.put(1, "Walid");
+        // map.put(2, "Ahmed");
+        // map.put(3, "Ali");
+        // map.put(null, null);
+        // map.put(4, null);
+
+        // System.out.println(map.remove(null));
+
+        // System.out.println(map.get(1));
+
+        // for (var string : map.entrySet()) {
+        // System.out.println(string.getKey());
+        // }
+
+        // Working solution for the first non repeated character
+        // a green apple (g)
+        System.out.println(nonRepeatedCharacter("a green apple"));
+    }
+
+    public static char nonRepeatedCharacter(String entry) {
+
+        Map<Integer, Character> map = new HashMap<>();
+        for (char character : entry.toCharArray()) {
+            map.put(0, character);
+        }
+
+        return 'a';
     }
 
 }
