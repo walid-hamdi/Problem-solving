@@ -122,13 +122,17 @@ public class App {
     }
 
     public static char nonRepeatedCharacter(String entry) {
-
+        char character = '-';
         Map<Integer, Character> map = new HashMap<>();
-        for (char character : entry.toCharArray()) {
-            map.put(0, character);
+        for (int i = 0; i < entry.length(); i++) {
+            map.put(i, entry.charAt(i));
+            if (!map.containsValue(entry.charAt(i))) {
+                continue;
+            }
+            character = entry.charAt(i);
         }
 
-        return 'a';
+        return character;
     }
 
 }
