@@ -1,6 +1,5 @@
 
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 // import LinkedListExercises.LinkedList;
 // import QueueExercises.ArrayQueue;
 import QueueExercises.PriorityQueue;
@@ -118,21 +117,63 @@ public class App {
 
         // Working solution for the first non repeated character
         // a green apple (g)
-        System.out.println(nonRepeatedCharacter("a green apple"));
+        System.out.println("First non repeated character: " + nonRepeatedCharacter("a green apple"));
+
+        // int[] numbers = { 1, 2, 2, 3, 4, 5 };
+        // Set<Integer> set = new HashSet<>();
+        // for (var num : numbers) {
+        // set.add(num);
+        // }
+
+        // System.out.println(set);
+
+        // green apple (e)
+        System.out.println("First repeated character: " + repeatedCharacter("green apple"));
     }
 
     public static char nonRepeatedCharacter(String entry) {
-        char character = '-';
-        Map<Integer, Character> map = new HashMap<>();
-        for (int i = 0; i < entry.length(); i++) {
-            map.put(i, entry.charAt(i));
-            if (!map.containsValue(entry.charAt(i))) {
-                continue;
-            }
-            character = entry.charAt(i);
+        var chars = entry.toCharArray();
+
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        for (Character character : chars) {
+            var count = map.containsKey(character) ? map.get(character) : 0;
+            map.put(character, count + 1);
+        }
+        for (Character character : chars) {
+            if (map.get(character) == 1)
+                return character;
         }
 
-        return character;
+        return Character.MIN_VALUE;
+    }
+
+    // public static char repeatedCharacter(String entry) {
+
+    // var chars = entry.toCharArray();
+
+    // Map<Character, Integer> map = new HashMap<Character, Integer>();
+    // for (Character character : chars) {
+    // var count = map.containsKey(character) ? map.get(character) : 0;
+    // map.put(character, count + 1);
+    // }
+    // for (Character character : chars) {
+    // if (map.get(character) > 1)
+    // return character;
+    // }
+
+    // return Character.MIN_VALUE;
+    // }
+
+    public static char repeatedCharacter(String entry) {
+        Set<Character> set = new HashSet<>();
+        for (var character : entry.toCharArray()) {
+            if (set.contains(character))
+                return character;
+
+            set.add(character);
+        }
+
+        return Character.MAX_VALUE;
     }
 
 }
